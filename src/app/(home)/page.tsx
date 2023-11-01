@@ -1,56 +1,33 @@
-"use client";
-import { Button } from "@/components/ui/button";
-import {
-  HeadphonesIcon,
-  KeyboardIcon,
-  MonitorIcon,
-  MouseIcon,
-  SpeakerIcon,
-  SquareDashedBottom,
-} from "lucide-react";
 import Image from "next/image";
 import Categories from "./components/categories";
+import { prismaClient } from "@/lib/prisma";
+import ProductList from "./components/product-list";
 
-export default function Home() {
+export default async function Home() {
+  const deals = await prismaClient.product.findMany({
+    where: {
+      discountPercentage: {
+        gt: 0,
+      },
+    },
+  });
   return (
-    <div className="p-5">
+    <div>
       <Image
         src="/banner-home-01.png"
         width={0}
         height={0}
-        className="h-auto w-full"
+        className="h-auto w-full px-5"
         sizes="100vw"
         alt="Até 55% Desconto só esse mes"
       />
-      <div className="mt-8">
+      <div className="mt-8 px-5">
         <Categories />
       </div>
-      {/* <div className=" mx-5 mt-8 grid grid-cols-2 gap-2 ">
-        <Button variant="outline" className="mx-1 my-1 rounded-xl">
-          <KeyboardIcon size={18} />
-          Teclados
-        </Button>
-        <Button variant="outline" className="mx-1 my-1 rounded-xl">
-          <MouseIcon size={18} />
-          Mouses
-        </Button>
-        <Button variant="outline" className="mx-1 my-1 rounded-xl">
-          <HeadphonesIcon size={18} />
-          Fones
-        </Button>
-        <Button variant="outline" className="mx-1 my-1 rounded-xl">
-          <SquareDashedBottom size={18} />
-          Mousepads
-        </Button>
-        <Button variant="outline" className="mx-1 my-1 rounded-xl">
-          <MonitorIcon size={18} />
-          Monitores
-        </Button>
-        <Button variant="outline" className="mx-1 my-1 rounded-xl">
-          <SpeakerIcon size={18} />
-          Speakers
-        </Button>
-      </div> */}
+
+      <div className="mt-8">
+        <ProductList products={deals} />
+      </div>
     </div>
   );
 }

@@ -1,7 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@layer utilities {
+  /* Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
 
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
 @layer base {
   :root {
     --background: 0 0% 4%;
@@ -41,7 +51,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground h-full;
+    @apply h-full bg-background text-foreground;
   }
   html {
     @apply h-full;
