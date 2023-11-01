@@ -21,10 +21,12 @@ const ProductItem = ({ product }: ProductItemProps) => {
           }}
           alt={product.name}
         />
-        <Badge className="absolute left-3 top-3 px-2 py-[2px]">
-          <ArrowDownIcon size={14} />
-          {product.discountPercentage}%
-        </Badge>
+        {product.discountPercentage > 0 && (
+          <Badge className="absolute left-3 top-3 px-2 py-[2px]">
+            <ArrowDownIcon size={14} />
+            {product.discountPercentage}%
+          </Badge>
+        )}
       </div>
       <div>
         <p className="overflow-hidden text-ellipsis whitespace-nowrap text-sm">
