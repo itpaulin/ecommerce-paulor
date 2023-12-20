@@ -18,7 +18,7 @@ const CatalogPage = async () => {
 
       <div className="grid grid-cols-2 gap-8">
         {categories.map((category) => (
-          <CategoryItem category={category} />
+          <CategoryItem key={category.id} category={category} />
         ))}
       </div>
     </div>
