@@ -8,22 +8,22 @@ import {
   PercentIcon,
   ShoppingCartIcon,
 } from "lucide-react";
-import { Button } from "./button";
-import { Card } from "./card";
+import { Button } from "../button";
+import { Card } from "../card";
 import {
   Sheet,
   SheetClose,
   SheetContent,
   SheetHeader,
   SheetTrigger,
-} from "./sheet";
+} from "../sheet";
 import { signIn, signOut, useSession } from "next-auth/react";
-import { Avatar, AvatarFallback, AvatarImage } from "./avatar";
-import { Separator } from "./separator";
+import { Avatar, AvatarFallback, AvatarImage } from "../avatar";
+import { Separator } from "../separator";
 import Link from "next/link";
-import Cart from "./cart";
+import Cart from "../cart";
 
-const Header = () => {
+const HeaderMobile = () => {
   const { status, data } = useSession();
   const handleLoginClick = async () => {
     await signIn();
@@ -142,4 +142,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default HeaderMobile;
