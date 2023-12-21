@@ -19,7 +19,7 @@ const DealsPage = async () => {
         variant="outline"
       >
         <PercentIcon size={16} />
-        Catálogo
+        Ofertas
       </Badge>
       <div className="grid grid-cols-2 gap-8">
         {deals.map((product) => (
