@@ -37,11 +37,11 @@ const HeaderDesktop = () => {
           <h1 className="font-bold">Início </h1>
         </Link>
         <Line />
-        <Link href="/">
+        <Link href="/catalog">
           <h1 className="font-bold"> Catálogo</h1>
         </Link>
         <Line />
-        <Link href="/">
+        <Link href="/deals">
           <h1 className="font-bold">Ofertas </h1>
         </Link>
       </div>
