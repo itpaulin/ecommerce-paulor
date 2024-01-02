@@ -29,14 +29,14 @@ export default async function Home() {
     },
   });
   return (
-    <div className="flex flex-col gap-8 py-8">
+    <>
       <div className="md:hidden">
         <PromoBanner
           src="/banner-home-01.png"
           alt="Até 55% Desconto só esse mes"
         />
       </div>
-      <div className="md:block hidden">
+      <div className="hidden md:block">
         <Image
           width={0}
           height={0}
@@ -46,31 +46,69 @@ export default async function Home() {
           alt="Promobanner desktop"
         />
       </div>
-      <div className=" px-5">
-        <Categories />
+      <div className="flex flex-col gap-8 pt-10 md:px-24 md:pb-10">
+        <div className=" px-5">
+          <Categories />
+        </div>
+
+        <div className="">
+          <SectionTitle>Ofertas</SectionTitle>
+          <ProductList products={deals} />
+        </div>
+
+        <div className=" hidden grid-cols-2 gap-8 md:grid">
+          <Image
+            width={0}
+            height={0}
+            sizes="100vw"
+            className="h-auto w-full"
+            src="/banner-mouses.png"
+            alt="Até 55% de desconto em mouses!"
+          />
+          <Image
+            width={0}
+            height={0}
+            sizes="100vw"
+            className="h-auto w-full"
+            src="/banner-fones.png"
+            alt="Até 20% desconto em fones!"
+          />
+        </div>
+        <div className="md:hidden">
+          <PromoBanner
+            src="/banner-mouses.png"
+            alt="Até 55% de desconto em mouses!"
+          />
+        </div>
+
+        <div className="md:">
+          <SectionTitle>Teclados</SectionTitle>
+          <ProductList products={keyboards} />
+        </div>
+
+        <div className="md:hidden">
+          <PromoBanner
+            src="/banner-fones.png"
+            alt="Até 20% desconto em fones!"
+          />
+        </div>
+
+        <div className="hidden md:block">
+          <Image
+            width={0}
+            height={0}
+            className="h-auto w-full"
+            sizes="100vw"
+            src="/banner-fretegratis.png"
+            alt="Promobanner desktop"
+          />
+        </div>
+
+        <div>
+          <SectionTitle>Mouses</SectionTitle>
+          <ProductList products={mouses} />
+        </div>
       </div>
-
-      <div>
-        <SectionTitle>Ofertas</SectionTitle>
-        <ProductList products={deals} />
-      </div>
-
-      <PromoBanner
-        src="/banner-mouses.png"
-        alt="Até 55% de desconto em mouses!"
-      />
-
-      <div>
-        <SectionTitle>Teclados</SectionTitle>
-        <ProductList products={keyboards} />
-      </div>
-
-      <PromoBanner src="/banner-fones.png" alt="Até 20% desconto em fones!" />
-
-      <div>
-        <SectionTitle>Mouses</SectionTitle>
-        <ProductList products={mouses} />
-      </div>
-    </div>
+    </>
   );
 }
