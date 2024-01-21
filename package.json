@@ -28,6 +28,7 @@
     "next-auth": "^4.23.2",
     "react": "^18",
     "react-dom": "^18",
+    "react-responsive": "^9.0.2",
     "stripe": "^14.9.0",
     "tailwind-merge": "^1.14.0",
     "tailwindcss-animate": "^1.0.7",

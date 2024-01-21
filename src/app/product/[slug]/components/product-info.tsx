@@ -27,11 +27,11 @@ const ProductInfo = ({ product }: ProductInfoProps) => {
     addProductToCart({ ...product, quantity });
   };
   return (
-    <div className="flex flex-col">
-      <h2 className="text-lg">{product.name}</h2>
+    <div className="flex flex-col md:bg-accent md:p-10">
+      <h2 className="text-lg md:pb-8 md:text-[1.5625rem]">{product.name}</h2>
 
       <div className="flex items-center gap-2">
-        <h1 className="text-xl font-bold">
+        <h1 className="text-xl font-bold md:text-3xl">
           R$ {product.totalPrice.toFixed(2)}
         </h1>
         {product.discountPercentage > 0 && (
@@ -40,8 +40,11 @@ const ProductInfo = ({ product }: ProductInfoProps) => {
       </div>
 
       {product.discountPercentage > 0 && (
-        <p className="text-sm line-through opacity-75">
-          R$ {Number(product.basePrice).toFixed(2)}
+        <p className="flex text-sm opacity-75 md:text-base">
+          De:
+          <p className=" pl-2 text-sm line-through opacity-75 md:text-base">
+            R$ {Number(product.basePrice).toFixed(2)}
+          </p>
         </p>
       )}
 
@@ -76,7 +79,7 @@ const ProductInfo = ({ product }: ProductInfoProps) => {
         Adicionar ao carrinho
       </Button>
 
-      <div className="mt-5 flex items-center justify-between rounded-lg bg-accent px-5 py-2">
+      <div className="mt-5 flex items-center justify-between rounded-lg bg-accent px-5 py-2 md:bg-[#2A2A2A]">
         <div className="flex items-center gap-3">
           <TruckIcon />
 

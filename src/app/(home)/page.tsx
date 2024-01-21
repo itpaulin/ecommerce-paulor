@@ -3,6 +3,7 @@ import { prismaClient } from "@/lib/prisma";
 import ProductList from "@/components/ui/product-list";
 import SectionTitle from "@/components/ui/section-title";
 import PromoBanner from "./components/promo-banner";
+import Image from "next/image";
 
 export default async function Home() {
   const deals = await prismaClient.product.findMany({
@@ -28,36 +29,86 @@ export default async function Home() {
     },
   });
   return (
-    <div className="flex flex-col gap-8 py-8">
-      <PromoBanner
-        src="/banner-home-01.png"
-        alt="Até 55% Desconto só esse mes"
-      />
-      <div className=" px-5">
-        <Categories />
+    <>
+      <div className="md:hidden">
+        <PromoBanner
+          src="/banner-home-01.png"
+          alt="Até 55% Desconto só esse mes"
+        />
       </div>
-
-      <div>
-        <SectionTitle>Ofertas</SectionTitle>
-        <ProductList products={deals} />
+      <div className="hidden md:block">
+        <Image
+          width={0}
+          height={0}
+          className="h-auto w-full"
+          sizes="100vw"
+          src="/banner-desktop-home.png"
+          alt="Promobanner desktop"
+        />
       </div>
+      <div className="flex flex-col gap-8 pt-10 md:px-24 md:pb-10">
+        <div className=" px-5">
+          <Categories />
+        </div>
 
-      <PromoBanner
-        src="/banner-mouses.png"
-        alt="Até 55% de desconto em mouses!"
-      />
+        <div className="">
+          <SectionTitle>Ofertas</SectionTitle>
+          <ProductList products={deals} />
+        </div>
 
-      <div>
-        <SectionTitle>Teclados</SectionTitle>
-        <ProductList products={keyboards} />
+        <div className=" hidden grid-cols-2 gap-8 md:grid">
+          <Image
+            width={0}
+            height={0}
+            sizes="100vw"
+            className="h-auto w-full"
+            src="/banner-mouses.png"
+            alt="Até 55% de desconto em mouses!"
+          />
+          <Image
+            width={0}
+            height={0}
+            sizes="100vw"
+            className="h-auto w-full"
+            src="/banner-fones.png"
+            alt="Até 20% desconto em fones!"
+          />
+        </div>
+        <div className="md:hidden">
+          <PromoBanner
+            src="/banner-mouses.png"
+            alt="Até 55% de desconto em mouses!"
+          />
+        </div>
+
+        <div className="md:">
+          <SectionTitle>Teclados</SectionTitle>
+          <ProductList products={keyboards} />
+        </div>
+
+        <div className="md:hidden">
+          <PromoBanner
+            src="/banner-fones.png"
+            alt="Até 20% desconto em fones!"
+          />
+        </div>
+
+        <div className="hidden md:block">
+          <Image
+            width={0}
+            height={0}
+            className="h-auto w-full"
+            sizes="100vw"
+            src="/banner-fretegratis.png"
+            alt="Promobanner desktop"
+          />
+        </div>
+
+        <div>
+          <SectionTitle>Mouses</SectionTitle>
+          <ProductList products={mouses} />
+        </div>
       </div>
-
-      <PromoBanner src="/banner-fones.png" alt="Até 20% desconto em fones!" />
-
-      <div>
-        <SectionTitle>Mouses</SectionTitle>
-        <ProductList products={mouses} />
-      </div>
-    </div>
+    </>
   );
 }
