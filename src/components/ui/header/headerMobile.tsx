@@ -22,6 +22,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "../avatar";
 import { Separator } from "../separator";
 import Link from "next/link";
 import Cart from "../cart";
+import { ModeToggle } from "../mode-toggle";
 
 const HeaderMobile = () => {
   const { status, data } = useSession();
@@ -32,7 +33,7 @@ const HeaderMobile = () => {
     await signOut();
   };
   return (
-    <Card className="flex items-center justify-between p-[1.875rem]">
+    <Card className="flex border-spacing-0 items-center justify-between rounded-none border-l-0 border-r-0 border-t-0 p-[1.875rem]">
       <Sheet>
         <SheetTrigger asChild>
           <Button size="icon" variant="outline">
@@ -41,8 +42,9 @@ const HeaderMobile = () => {
         </SheetTrigger>
 
         <SheetContent side="left">
-          <SheetHeader className="text-left text-lg font-semibold">
+          <SheetHeader className="flex flex-row justify-between pr-3 text-left text-lg font-semibold">
             Menu
+            <ModeToggle />
           </SheetHeader>
           <div className="mt-2 flex flex-col gap-4">
             {status === "authenticated" && data?.user && (

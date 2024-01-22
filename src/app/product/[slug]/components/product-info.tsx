@@ -42,9 +42,9 @@ const ProductInfo = ({ product }: ProductInfoProps) => {
       {product.discountPercentage > 0 && (
         <p className="flex text-sm opacity-75 md:text-base">
           De:
-          <p className=" pl-2 text-sm line-through opacity-75 md:text-base">
+          <span className="pl-2 text-sm line-through opacity-95 dark:opacity-75 md:text-base">
             R$ {Number(product.basePrice).toFixed(2)}
-          </p>
+          </span>
         </p>
       )}
 
@@ -69,7 +69,9 @@ const ProductInfo = ({ product }: ProductInfoProps) => {
 
       <div className="mt-8 flex flex-col gap-3">
         <h3 className="font-bold">Descrição</h3>
-        <p className="text-justify text-sm opacity-60">{product.description}</p>
+        <p className="text-justify text-sm opacity-90 dark:opacity-60">
+          {product.description}
+        </p>
       </div>
 
       <Button
@@ -79,7 +81,7 @@ const ProductInfo = ({ product }: ProductInfoProps) => {
         Adicionar ao carrinho
       </Button>
 
-      <div className="mt-5 flex items-center justify-between rounded-lg bg-accent px-5 py-2 md:bg-[#2A2A2A]">
+      <div className="mt-5 flex items-center justify-between rounded-lg bg-accent px-5 py-2 md:bg-white md:dark:bg-[#2A2A2A]">
         <div className="flex items-center gap-3">
           <TruckIcon />
 
