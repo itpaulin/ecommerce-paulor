@@ -13,6 +13,7 @@ import Cart from "../cart";
 import { Avatar, AvatarFallback, AvatarImage } from "../avatar";
 import { Separator } from "../separator";
 import Line from "../line";
+import { ModeToggle } from "../mode-toggle";
 const HeaderDesktop = () => {
   const { status, data } = useSession();
   const handleLoginClick = async () => {
@@ -49,6 +50,7 @@ const HeaderDesktop = () => {
       {/* Login e Carrinho */}
       <div className="flex flex-row gap-5">
         <Sheet>
+          <ModeToggle />
           <SheetTrigger asChild>
             <Button size="icon" variant="outline">
               <UserIcon />

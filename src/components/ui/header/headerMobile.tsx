@@ -22,6 +22,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "../avatar";
 import { Separator } from "../separator";
 import Link from "next/link";
 import Cart from "../cart";
+import { ModeToggle } from "../mode-toggle";
 
 const HeaderMobile = () => {
   const { status, data } = useSession();
@@ -41,8 +42,9 @@ const HeaderMobile = () => {
         </SheetTrigger>
 
         <SheetContent side="left">
-          <SheetHeader className="text-left text-lg font-semibold">
+          <SheetHeader className="flex flex-row justify-between pr-3 text-left text-lg font-semibold">
             Menu
+            <ModeToggle />
           </SheetHeader>
           <div className="mt-2 flex flex-col gap-4">
             {status === "authenticated" && data?.user && (
