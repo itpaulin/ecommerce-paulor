@@ -10,8 +10,8 @@ const Line = () => {
       <path
         d="M1.5 25L1.5 1"
         stroke="#2A2A2A"
-        stroke-width="2"
-        stroke-linecap="round"
+        strokeWidth="2"
+        strokeLinecap="round"
       />
     </svg>
   );
