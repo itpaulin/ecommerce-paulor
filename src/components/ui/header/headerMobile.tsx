@@ -33,7 +33,7 @@ const HeaderMobile = () => {
     await signOut();
   };
   return (
-    <Card className="flex items-center justify-between p-[1.875rem]">
+    <Card className="flex border-spacing-0 items-center justify-between rounded-none border-l-0 border-r-0 border-t-0 p-[1.875rem]">
       <Sheet>
         <SheetTrigger asChild>
           <Button size="icon" variant="outline">
