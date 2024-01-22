@@ -30,7 +30,7 @@ export default async function Home() {
   });
   return (
     <>
-      <div className="md:hidden">
+      <div className="pt-7 md:hidden">
         <Image
           width={0}
           height={0}
@@ -65,7 +65,7 @@ export default async function Home() {
             width={0}
             height={0}
             sizes="100vw"
-            className="h-auto w-full"
+            className="bg-banner-light dark:bg-banner-dark h-auto w-full rounded-2xl"
             src="/banner-mouses.png"
             alt="Até 55% de desconto em mouses!"
           />
@@ -73,7 +73,7 @@ export default async function Home() {
             width={0}
             height={0}
             sizes="100vw"
-            className="h-auto w-full"
+            className="bg-banner-light dark:bg-banner-dark h-auto w-full rounded-2xl"
             src="/banner-fones.png"
             alt="Até 20% desconto em fones!"
           />
