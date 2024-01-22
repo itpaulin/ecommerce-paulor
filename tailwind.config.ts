@@ -18,7 +18,11 @@ module.exports = {
     extend: {
       backgroundImage: {
         "category-item-gradient":
-          "linear-gradient(45deg, #5033C3 0%, rgba(80, 51, 195, 0.20) 100%)",
+          "linear-gradient(45deg, #FF7F00 0%, rgba(255, 140, 0, 0.20) 100%)",
+        "banner-dark":
+          "linear-gradient(90deg, #36393C 0%, #36393C 0.01%, rgba(54, 57, 60, 0.56) 72.75%, rgba(54, 57, 60, 0.40) 100%)",
+        "banner-light":
+          "linear-gradient(90deg, #c0c0c0 0%, #c0c0c0 0.01%, rgba(192, 192, 192, 0.56) 72.75%, rgba(192, 192, 192, 0.40) 100%)",
       },
       colors: {
         border: "hsl(var(--border))",
