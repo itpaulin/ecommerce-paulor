@@ -34,12 +34,14 @@ Este é o repositório do meu primeiro e-commerce proporcionando prática consta
 
 - **Pagamento do Pedido com a API do Stripe**: Ofereço uma experiência segura de pagamento online com a integração da API do Stripe, incluindo o uso de webhooks para processar eventos relacionados ao pagamento. Os usuários podem concluir seus pedidos com facilidade e segurança.
 
+- **Modo Claro e Escuro**: Os usuários podem escolher a luminosidade da interface de acordo com suas preferências ou como o sistema já estiver definido.
+
 ## Protótipo no Figma 🎨
 
 O projeto foi desenvolvido através de um protótipo. Ele oferece uma prévia visual de como a interface do usuário é projetada e como as diferentes funcionalidades são organizadas.
 
 Fique à vontade para explorar e compartilhar suas opiniões sobre o design do projeto!
 
-### Como Acessar
+## Como Acessar
 
 Basta acessar o site em produção, publicado na Vercel: [aqui](https://ecommerce-paulor-itpaulin.vercel.app/).
