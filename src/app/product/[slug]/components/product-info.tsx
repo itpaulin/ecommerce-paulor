@@ -79,7 +79,7 @@ const ProductInfo = ({ product }: ProductInfoProps) => {
         Adicionar ao carrinho
       </Button>
 
-      <div className="mt-5 flex items-center justify-between rounded-lg bg-accent px-5 py-2 md:bg-[#2A2A2A]">
+      <div className="mt-5 flex items-center justify-between rounded-lg bg-accent px-5 py-2 md:bg-white md:dark:bg-[#2A2A2A]">
         <div className="flex items-center gap-3">
           <TruckIcon />
 
